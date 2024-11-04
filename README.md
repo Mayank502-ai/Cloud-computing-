@@ -341,19 +341,19 @@ This command will launch our vm which we have created on openstack
 
 
 •Then create INTERNET GATWAY , whic is to be connected to your VPC which is created earliarly.
-# d
+
 ![IMG-20241105-WA0003](https://github.com/user-attachments/assets/a7fadb3c-1cd2-4e36-a87d-cccace0f6557)
 
 
 •Then we have to create VPG virtual privaye gate, and connect to VPC .
 
 •Now we have to go to the route table and create 2 route table , one for IGW and another for VGW .
-# d
+
 ![IMG-20241105-WA0004](https://github.com/user-attachments/assets/5e7b5337-f633-4a1a-a3d1-fd0fc6327a40)
 
 
 •Now we have to connect two public subnet in myigw and on other we have to add the private subnets .
-# d
+
 ![IMG-20241105-WA0005](https://github.com/user-attachments/assets/df18741f-ad89-4110-afc1-a9ad3317d9f7)
 
 
