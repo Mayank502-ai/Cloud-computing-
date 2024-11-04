@@ -378,4 +378,5 @@ seq 999999999999999999999999999999999999999999999999999999999 > /dev/null &
 ```
 htop
 ```
+![IMG-20241105-WA0010](https://github.com/user-attachments/assets/4698dea7-14b1-40e2-ab0a-30b72c3f563c)
 
