@@ -335,6 +335,7 @@ This command will launch our vm which we have created on openstack
 •Go to VPC and create a VPC then we have to create 4 subnets , where 2 subnets are private and other two are public .
 # d
 # d 
+![IMG-20241105-WA0002](https://github.com/user-attachments/assets/633ea46f-f355-4c59-abee-71991ac0657e)
 
 
 •Then create INTERNET GATWAY , whic is to be connected to your VPC which is created earliarly.
