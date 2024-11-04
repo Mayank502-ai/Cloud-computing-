@@ -168,111 +168,157 @@ will show index.html file
 ```
 sudo vi index.html
 ```
+```
 i
+```
 help to insert in the web server
-
+```
 <html> hi </html>
-write whatever you want to write I write only hi ctrl + c shift + ; wq press {ENTER}
-
+```
+write whatever you want to write I write only hi
+ctrl + c 
+shift + ; 
+wq 
+press {ENTER}
+```
 docker run --name docker-nginx -p 80:80 -d -v ~/docker-nginx/html:/usr/share/nginx/html nginx
+```
 Linking the container to the VM
 
 After running that command, enter the server’s IP address into the browser to view the new landing page
 
-INSTALLING MINIKUBE IN VM
-CREATE AN INSTANCE IN AWS AS , WITH OS OF UBUNTU OR WHAT YOU WANT THEN CHANGE SOME SETTINGS TO WORK LIKE TAKING Amozon Machine Image (AMI) Instance type t3.xlarge AND STORAGE 30GB NETWORK SETTING YOU CAN INCLUDE
-SSH
-HTTP
-HTTPS
-ALL TRAFFIC
+
+
+# INSTALLING MINIKUBE IN VM
+CREATE AN INSTANCE IN AWS AS , WITH OS OF UBUNTU OR WHAT YOU WANT THEN CHANGE SOME SETTINGS TO WORK LIKE TAKING
+Amozon Machine Image (AMI) 
+Instance type 
+t3.xlarge AND
+STORAGE 30Gb 
+NETWORK SETTING YOU CAN INCLUDE
+1.SSH
+2.HTTP
+3.HTTPS
+4.ALL TRAFFIC
 AFTER THESE CHANGES YOU CAN LAUNCH THE INSTNACE
 AFTER THAT COPYING THE IP ADDRESS , ADD IT IN PUTTY AND ALSO SELECT THE KEY WHICH HAS BEEN CREATED IN PERIVOUS STEPS , THEN CLICK OPEN , AND YOUR VM IS AGAIN READY
 NOW WE HAVE TO INSTALL DOCKER
+```
 curl -sL https://github.com/ShubhamTatvamasi/docker-install/raw/master/docker-install.sh | bash
+```
 THIS COMMAND WILL HELP TO INSTALL DOCKER
-
+```
 sudo usermod -aG docker $USER
+```
 THIS COMMAND WILL HEPL TO USE DOCKER FUNCTIONS
-
+```
 newgrp docker
+```
 THIS WILL CREATE A NEW GROUP IN OS
-
+```
 sudo snap install kubectl --classic
+```
 TO INSTALL kubectl IN DOCKER
-
+```
 kubectl version --client
-TO SEE THE VERISON OF kubectl
+```
 
 TO INSTALL MINIKUBE
-
+```
 sudo install minikube-linux-amd64 /usr/local/bin/minikube
+```
 TO INSTALL MINIKUBE IN LINUX DIRECTORY
-
+```
 minikube version
+```
 TO CHECK THE VERISON
-
+```
 minikube start --driver=docker
+```
 TO START THE MINIKUBE ON VM
-
+```
 minikube start --driver=docker --force
+```
 IF YOU GET SOME ERROR TRY THIS COMMAND TO SOLVE IT
-
+```
 minikube status
+```
 TO CHECK THE STATUS OF MINIKUBE THAT IT IS RUNNING OR NOT
-
+```
 kubectl cluster-info
+```
 TO SEE THE CLUSTER INFORMATION
-
+```
 kubectl config view
+```
 CONFIGURING THE KUBECTL
-
+```
 kubectl get nodes
+```
 TO SEE HOW MANY NODES ARE PRESENT IN KUBECTL
-
+```
 kubectl get pods
+```
 TO SEE HOW MANY PODS ARE PRESENT IN KUBECTL
 
 To deploy a sample nginx deployment, run following set of commands.
-
+```
 kubectl create deployment nginx-web --image=nginx
- kubectl expose deployment nginx-web --type NodePort --port=80
+```
+```
+kubectl expose deployment nginx-web --type NodePort --port=80
+```
+```
 kubectl get deployment,pod,svc
+```
 Managing Minikube Addons
-
+```
 minikube addons list
+```
 TO SEE THE LIST OF ADDONS WHICH WE CAN ENABLE
-
+```
 minikube addons enable dashboard
+```
 ENABLING DASHBORAD
-
+```
 minikube addons enable ingress
+```
 ENABLING INGRESS
 
+```
 minikube dashboard --url
+```
 It will get the url and run the dashboard of MiniKube
-
+```
 kubectl proxy --address='0.0.0.0' --disable-filter=true &
+```
 It will convert the address for 8001 which we can access on our browser
-
+```
 http://server_ip:8001/api/v1/namespaces/kubernetes-dashboard/services/http:kubernetes-dashboard:/proxy
-Run the above command on you browser and in server_ip add you ip address provided by AWS
-Screenshot_20241104_202055_Telegram
+```
+# Run the above command on you browser and in server_ip add you ip address provided by AWS
+# dia
 
-Installing openstack on VM and creating a VM on it
-CREATE AN INSTANCE IN AWS AS , WITH OS OF UBUNTU OR WHAT YOU WANT THEN CHANGE SOME SETTINGS TO WORK LIKE TAKING Amozon Machine Image (AMI) Instance type t3.xlarge AND STORAGE 50GB NETWORK SETTING YOU CAN INCLUDE
-SSH
-HTTP
-HTTPS
-ALL TRAFFIC
+# Installing openstack on VM and creating a VM on it
+1.CREATE AN INSTANCE IN AWS AS , WITH OS OF UBUNTU OR WHAT YOU WANT THEN CHANGE SOME SETTINGS TO WORK LIKE TAKING Amozon Machine Image (AMI) Instance type t3.xlarge AND STORAGE 50GB NETWORK SETTING YOU CAN INCLUDE
+1.SSH
+2.HTTP
+3.HTTPS
+4.ALL TRAFFIC
 AFTER THESE CHANGES YOU CAN LAUNCH THE INSTNACE
 AFTER THAT COPYING THE IP ADDRESS , ADD IT IN PUTTY AND ALSO SELECT THE KEY WHICH HAS BEEN CREATED IN PERIVOUS STEPS , THEN CLICK OPEN , AND YOUR VM IS AGAIN READY Install the openstack snap
+```
 sudo snap install openstack --channel 2024.1/beta
+```
 Prepare the machine Sunbeam can generate a script to ensure that the machine has all of the required dependencies installed and is configured correctly for use in OpenStack - you can review this script using:
-
+```
 sunbeam prepare-node-script
+```
+```
 sunbeam prepare-node-script | bash -x && newgrp snap_daemon
+```
 It will directly execute it #Deploy the OpenStack cloud using the cluster bootstrap command and accept software defaults:
-
+```
 sunbeam cluster bootstrap --accept-defaults
 This process will take around 30 min or more/less dependes upon internet speed
 
