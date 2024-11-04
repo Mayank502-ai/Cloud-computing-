@@ -348,6 +348,7 @@ This command will launch our vm which we have created on openstack
 
 •Now we have to connect two public subnet in myigw and on other we have to add the private subnets .
 # d
+![IMG-20241105-WA0005](https://github.com/user-attachments/assets/df18741f-ad89-4110-afc1-a9ad3317d9f7)
 
 
 •now we have to create two instnaces where we have to enable the public IPv4 .
