@@ -43,22 +43,28 @@ First open aws search EC2 then Launch Instance and there select keypair in putty
 after that Launch it and run putty and paste public id on HOST NAME and open that downloaded key pair for putty in SSH then Auth then Credentials and open there.
 
 after that run it and write username as ubuntu as selected os and then type following commands.
-'''
+```
 sudo apt update
-'''
+```
+```
 sudo apt install apache2
+```
 to install a web server on ip then
-
+```
 sudo su
+```
 for convert $ into # for getting admin role then
-
+```
 cd /var/www/html/
+```
 then
-
+```
 ls
+```
 for list of html file in it then copy that html file name and write
-
+```
 rm index.html
+```
 rm means remove command
 
 vi index.html
