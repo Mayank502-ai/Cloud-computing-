@@ -320,34 +320,35 @@ sunbeam prepare-node-script | bash -x && newgrp snap_daemon
 It will directly execute it #Deploy the OpenStack cloud using the cluster bootstrap command and accept software defaults:
 ```
 sunbeam cluster bootstrap --accept-defaults
+```
 This process will take around 30 min or more/less dependes upon internet speed
-
+```
 sunbeam configure --accept-defaults --openrc demo-openrc
+```
 This command will configure the deployed cloud . It will also take around 5 min .
-
+```
 sunbeam launch ubuntu --name test
+```
 This command will launch our vm which we have created on openstack
 
-VPC
+# VPC
 •Go to VPC and create a VPC then we have to create 4 subnets , where 2 subnets are private and other two are public .
+# d
+# d 
 
-Screenshot_20241104_202449_Telegram
-
-Screenshot_20241104_202503_Telegram
 
 •Then create INTERNET GATWAY , whic is to be connected to your VPC which is created earliarly.
+# d
 
-Screenshot_20241104_202520_Telegram
 
 •Then we have to create VPG virtual privaye gate, and connect to VPC .
 
 •Now we have to go to the route table and create 2 route table , one for IGW and another for VGW .
-
-Screenshot_20241104_202616_Telegram
+# d
 
 •Now we have to connect two public subnet in myigw and on other we have to add the private subnets .
+# d
 
-Screenshot_20241104_202629_Telegram
 
 •now we have to create two instnaces where we have to enable the public IPv4 .
 
@@ -361,16 +362,20 @@ Screenshot_20241104_202629_Telegram
 
 •then we have to create the target group where we have to select the two insatance we have create then we have to go to helath check edited option which was present below the load balancer is create ,then edit it as given below image
 
-Screenshot_20241104_202750_Telegram
+# d 
 
 •after that come to load balancer where we have to select the target group which we have created then make the load balancer , it will look like the given image below .
-
-Screenshot_20241104_202826_Telegram
-Screenshot_20241104_202837_Telegram
+# d
+# d
 
 •Now go to any server and type some commands
-
+```
 htop
+```
+```
 seq 999999999999999999999999999999999999999999999999999999999 > /dev/null &
+```
+```
 htop
+```
 
