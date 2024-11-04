@@ -1,6 +1,4 @@
 
-
-
 # CLOUD COMPUTING
 # How to make a vm( virtual machine)=
 1.make an account on aws.
@@ -66,77 +64,110 @@ for list of html file in it then copy that html file name and write
 rm index.html
 ```
 rm means remove command
-
+```
 vi index.html
+```
 this will open a notepad like and write html code there like (vi is editor)
 
 then press ctrl+c then shift+colon then write wq and enter
 
 now copy your public ip and paste it on browser you will see the texts written by you (by using html above).
-Hosting a Website on AWS with Apache2 Using PowerShell
+# Hosting a Website on AWS with Apache2 Using PowerShell
 (These are the steps after launching instance and downloading .pem passkey)
 
-Step 1: Connect to EC2 Instance Using PowerShell Open PowerShell in Windows. Navigate to your PEM file: First, ensure you’re in the directory where your .pem file is located. Use cd to change directories: cd path\to\your-pem-file Use the ssh command to connect to your EC2 instance: ssh -i "path_to_your_key.pem" ec2-user@your_instance_public_IP Replace path_to_your_key.pem with the location of your private key. Replace your_instance_public_IP with the public IP of your EC2 instance.
+Step 1: Connect to EC2 Instance Using PowerShell 
+Open PowerShell in Windows. Navigate to your PEM file: First, ensure you’re in the directory where your .pem file is located. Use cd to change directories:
+cd path\to\your-pem-file 
+Use the ssh command to connect to your EC2 instance:
+ssh -i "path_to_your_key.pem" ec2-user@your_instance_public_IP Replace path_to_your_key.pem with the location of your private key. Replace your_instance_public_IP with the public IP of your EC2 instance.
 
 Step 2: Update the Package List on Your EC2 Instance Run the following command after logging in to update your packages:
-
-sudo apt update Step 3: Install Apache2 To install the Apache2 web server:
-
-sudo apt install apache2 -y Step 4: Delete the Default index.html and Create Your Own Navigate to the Apache web directory:
+```
+sudo apt update
+```
+Step 3: Install Apache2 To install the Apache2 web server:
+```
+sudo apt install apache2 -y
+```
+Step 4: Delete the Default index.html and Create Your Own Navigate to the Apache web directory:
 
 cd /var/www/html Delete the default index.html file: sudo rm index.html Create a new index.html file: sudo vi index.html Add your website's HTML content and save the file. YAY! Your link or IP adress of your instance will now work.
 
-USING DOCKER CONTAINER's IN VM ,TO ADD NGINX SEVER IN IT AND TYPING HI IN WEB SERVER
-First I login in my AWS account . Thne I created an instance .
-In instance I make some changes , where I edit in network setting , where I added SSH , HTTPS , HTTP, ALL TRAFFIC , ALL TCP , ALL UDP AND CREATED AN INSTANCE.
-Then I open puuty add the IP address from instance and add key pair file which I have downloaded when I creating instance.
-After that I click on open , then my ubuntu terminal was opended , where I logined by writting ubuntu.
-After that I have to install docker in my OS .
-Then , I enter few command to install the docker
+# USING DOCKER CONTAINER's IN VM ,TO ADD NGINX SEVER IN IT AND TYPING HI IN WEB SERVER
+1.First I login in my AWS account . Then I created an instance .
+2.In instance I make some changes , where I edit in network setting , where I added SSH , HTTPS , HTTP, ALL TRAFFIC , ALL TCP , ALL UDP AND CREATED AN INSTANCE.
+3.Then I open puuty add the IP address from instance and add key pair file which I have downloaded when I creating instance.
+4.After that I click on open , then my ubuntu terminal was opended , where I logined by writting ubuntu.
+5.After that I have to install docker in my OS .
+6.Then , I enter few command to install the docker
 COMMANDS ARE:
+``` bash
 curl -sL https://github.com/ShubhamTatvamasi/docker-install/raw/master/docker-install.sh | bash
+```
+```
 newgrp docker
+```
 this command will help us to use docker
-
+```
 docker ps
+```
 provides a list of the Docker containers on your machine
-
+```
 docker --version
+```
 to check the version of docker which is installed
-
+```
 docker pull nginx
+```
 TO use nginx server in container
-
+```
 docker run --name docker-nginx -p 80:80 nginx
+```
 In a web browser, enter your server’s IP address to reveal Nginx’s default landing page ctrl + c #to stop the container from running
-
+```
 docker ps -a
-The output reveals that the Docker container has exited ●DETACHED MODE
-
+```
+The output reveals that the Docker container has exited
+●DETACHED MODE
+```
 docker run --name docker-nginx -p 80:80 -d nginx
+```
 output is the container’s ID
-
+```
 docker ps
+```
 provoide new information about container
-
+```
 docker stop docker-nginx
+```
 to stop the container
-
+```
 docker rm docker-nginx
+```
 Building a Web Page to Serve on Nginx
-
+```
 mkdir -p ~/docker-nginx/html
+```
 Create a new directory for the website content within the home directory
-
+```
 cd ~/docker-nginx/html
+```
 Create an HTML file to serve on the server
-
+```
 ls
+```
+```
 cd html/
+```
+```
 ls
+```
+```
 will show index.html file
-
+```
+```
 sudo vi index.html
+```
 i
 help to insert in the web server
 
