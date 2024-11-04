@@ -297,7 +297,8 @@ It will convert the address for 8001 which we can access on our browser
 http://server_ip:8001/api/v1/namespaces/kubernetes-dashboard/services/http:kubernetes-dashboard:/proxy
 ```
 # Run the above command on you browser and in server_ip add you ip address provided by AWS
-# dia
+![IMG-20241105-WA0000](https://github.com/user-attachments/assets/b9a184d7-d381-480d-8b85-46e7a1ad46f8)
+
 
 # Installing openstack on VM and creating a VM on it
 1.CREATE AN INSTANCE IN AWS AS , WITH OS OF UBUNTU OR WHAT YOU WANT THEN CHANGE SOME SETTINGS TO WORK LIKE TAKING Amozon Machine Image (AMI) Instance type t3.xlarge AND STORAGE 50GB NETWORK SETTING YOU CAN INCLUDE
